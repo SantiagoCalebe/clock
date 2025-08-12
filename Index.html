@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<title>Clock</title>
+<style>
+  @font-face {
+    font-family: 'VCR';
+    src: url('fonts/vcr.ttf') format('truetype');
+  }
+  body {
+    font-family: 'VCR', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  body.day {
+    background: white;
+    color: black;
+  }
+  body.night {
+    background: black;
+    color: white;
+  }
+  #time {
+    font-size: 80px;
+  }
+  #date {
+    font-size: 28px;
+    margin-top: 8px;
+  }
+  button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    font-family: 'VCR', monospace;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 0;
+    background: transparent;
+    color: white;
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+  }
+  body.day button {
+    color: black;
+    border-color: black;
+  }
+  body.night button {
+    color: white;
+    border-color: white;
+  }
+  #squishyImg {
+    width: 250px;
+    margin-top: 30px;
+  }
+  @keyframes squishy {
+    0%   { transform: scale(1,1); }
+    50%  { transform: scale(1.2,1); }
+    100% { transform: scale(1,1); }
+  }
+  .squishy {
+    animation: squishy 0.4s ease-in-out;
+  }
+</style>
+<script src="js/lang.js"></script>
+</head>
+<body>
+  <div id="time"></div>
+  <div id="date"></div>
+  <script src="js/script.js"></script>
+  <script src="js/color.js"></script>
+</body>
+</html>
